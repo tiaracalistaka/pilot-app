@@ -21,7 +21,8 @@ import { LoginDto } from './dto/login.dto';
 export class AuthController {
   private readonly cookieName = 'susi_session';
   private readonly cookieSecure = process.env.NODE_ENV === 'production';
-  private readonly cookieSameSite: 'lax' | 'strict' | 'none' = 'lax';
+  private readonly cookieSameSite: 'lax' | 'strict' | 'none' =
+    process.env.NODE_ENV === 'production' ? 'none' : 'lax';
 
   constructor(
     private readonly authService: AuthService,
