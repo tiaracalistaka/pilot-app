@@ -14,4 +14,4 @@ else
   echo "DATABASE_URL is not set; skipping Prisma setup and using JSON data"
 fi
 
-exec node dist/main
+exec node dist/src/main.js
