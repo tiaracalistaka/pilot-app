@@ -1,0 +1,175 @@
+// Susi Air Color Palette - Modern Design System
+// ============================================
+
+// Primary Colors
+$primary-navy: #0E2138;
+$primary-navy-light: #1a3a5c;
+$primary-navy-dark: #071525;
+
+// Brand Colors
+$brand-red: #E63757;
+$brand-red-light: #ec4d68;
+$brand-red-dark: #d62a47;
+
+// Background Colors
+$background: #F5F6F8;
+$background-secondary: #F1F5F9;
+$card-surface: #FFFFFF;
+$card-surface-hover: #FAFBFC;
+
+// Text Colors
+$text-primary: #0E2138;
+$text-secondary: #6B7280;
+$text-tertiary: #94A3B8;
+$text-inverse: #FFFFFF;
+
+// Status Colors
+$success: #1FBF8F;
+$success-light: rgba($success, 0.12);
+$warning: #F59E0B;
+$warning-light: rgba($warning, 0.12);
+$danger: #E63757;
+$danger-light: rgba($danger, 0.12);
+$info: #3B82F6;
+$info-light: rgba($info, 0.12);
+
+// Chart Colors
+$chart-accent: #22C5E8;
+$chart-primary: $brand-red;
+$chart-secondary: $chart-accent;
+$chart-tertiary: #8B5CF6;
+$chart-quaternary: #10B981;
+
+// Border Colors
+$border-default: #E2E8F0;
+$border-light: #F1F5F9;
+$border-focus: $primary-navy;
+
+// Semantic Colors
+$hover-overlay: rgba($primary-navy, 0.04);
+$active-overlay: rgba($primary-navy, 0.08);
+$disabled-overlay: rgba($primary-navy, 0.38);
+
+// Shadows - Multiple levels for depth
+$shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+$shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+// Typography
+// ==========
+$font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+// Font Sizes
+$text-xs: 0.75rem;    // 12px
+$text-sm: 0.875rem;   // 14px
+$text-base: 1rem;     // 16px
+$text-lg: 1.125rem;   // 18px
+$text-xl: 1.25rem;    // 20px
+$text-2xl: 1.5rem;    // 24px
+$text-3xl: 1.875rem;  // 30px
+$text-4xl: 2.25rem;   // 36px
+
+// Font Weights
+$font-normal: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+$font-extrabold: 800;
+
+// Line Heights
+$leading-tight: 1.25;
+$leading-normal: 1.5;
+$leading-relaxed: 1.75;
+
+// Letter Spacing
+$tracking-tight: -0.025em;
+$tracking-normal: 0;
+$tracking-wide: 0.025em;
+
+// Spacing Scale
+// =============
+$space-0: 0;
+$space-1: 0.25rem;   // 4px
+$space-2: 0.5rem;    // 8px
+$space-3: 0.75rem;   // 12px
+$space-4: 1rem;      // 16px
+$space-5: 1.25rem;   // 20px
+$space-6: 1.5rem;    // 24px
+$space-8: 2rem;      // 32px
+$space-10: 2.5rem;  // 40px
+$space-12: 3rem;     // 48px
+$space-16: 4rem;     // 64px
+$space-20: 5rem;     // 80px
+
+// Aliases for compatibility
+$spacing-xs: $space-1;
+$spacing-sm: $space-2;
+$spacing-md: $space-4;
+$spacing-lg: $space-6;
+$spacing-xl: $space-8;
+$spacing-2xl: $space-12;
+
+// Border Radius
+// =============
+$radius-none: 0;
+$radius-sm: 0.25rem;   // 4px
+$radius-md: 0.5rem;    // 8px
+$radius-lg: 0.75rem;   // 12px
+$radius-xl: 1rem;       // 16px
+$radius-2xl: 1.5rem;   // 24px
+$radius-full: 9999px;
+
+// Legacy aliases
+$radius-sm: $radius-md;
+$radius-md: $radius-lg;
+$radius-lg: $radius-xl;
+$radius-xl: $radius-2xl;
+
+// Transitions
+// ===========
+$transition-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$transition-ease-out: cubic-bezier(0, 0, 0.2, 1);
+$transition-ease-in: cubic-bezier(0.4, 0, 1, 1);
+$transition-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+$duration-fast: 100ms;
+$duration-normal: 200ms;
+$duration-slow: 300ms;
+$duration-slower: 500ms;
+
+// Legacy aliases
+$transition-fast: $duration-fast;
+$transition-base: $duration-normal;
+$transition-slow: $duration-slow;
+
+// Z-Index Scale
+// =============
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
+$z-toast: 1080;
+
+// Breakpoints
+// ===========
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// Container Max Widths
+$container-sm: 640px;
+$container-md: 768px;
+$container-lg: 1024px;
+$container-xl: 1280px;
+$container-2xl: 1536px;
+$container-app: 480px;

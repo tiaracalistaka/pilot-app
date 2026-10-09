@@ -1,0 +1,64 @@
+{
+  "documents": [
+    {
+      "id": "doc-001",
+      "name": "Airline Transport Pilot Certificate (ATPL)",
+      "type": "license",
+      "expiryDate": "2027-03-15",
+      "thresholdDays": 30
+    },
+    {
+      "id": "doc-002",
+      "name": "Class 1 Medical Certificate",
+      "type": "medical",
+      "expiryDate": "2026-06-20",
+      "thresholdDays": 30
+    },
+    {
+      "id": "doc-003",
+      "name": "Type Rating - Cessna Grand Caravan",
+      "type": "rating",
+      "expiryDate": "2027-01-10",
+      "thresholdDays": 30
+    },
+    {
+      "id": "doc-004",
+      "name": "Dangerous Goods Certificate",
+      "type": "training",
+      "expiryDate": "2026-04-10",
+      "thresholdDays": 30
+    },
+    {
+      "id": "doc-005",
+      "name": "Crew Resource Management (CRM)",
+      "type": "training",
+      "expiryDate": "2027-08-22",
+      "thresholdDays": 30
+    },
+    {
+      "id": "doc-006",
+      "name": "First Aid Certificate",
+      "type": "training",
+      "expiryDate": "2026-11-30",
+      "thresholdDays": 30
+    },
+    {
+      "id": "doc-007",
+      "name": "Survival Training - Sea",
+      "type": "training",
+      "expiryDate": "2027-02-14",
+      "thresholdDays": 30
+    },
+    {
+      "id": "doc-008",
+      "name": "Aviation English Language Proficiency",
+      "type": "language",
+      "expiryDate": "2026-09-05",
+      "thresholdDays": 30
+    }
+  ],
+  "thresholdDays": {
+    "safe": 90,
+    "soon": 30
+  }
+}

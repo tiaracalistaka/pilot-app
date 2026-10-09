@@ -1,0 +1,16 @@
+{
+  "pilots": [
+    {
+      "id": "pilot-001",
+      "username": "johndoe",
+      "password": "susiairtest",
+      "name": "John Doe",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=johndoe",
+      "email": "john.doe@susiair.com",
+      "role": "pilot",
+      "totalFlightHours": 2847.5,
+      "createdAt": "2024-01-15T00:00:00.000Z",
+      "lastPasswordChange": "2026-01-01T00:00:00.000Z"
+    }
+  ]
+}

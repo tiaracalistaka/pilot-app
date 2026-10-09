@@ -1,0 +1,79 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: susi_air_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: susi_air
+      POSTGRES_PASSWORD: susiair_password
+      POSTGRES_DB: susi_air_pilot
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U susi_air -d susi_air_pilot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - susi-network
+
+  api:
+    build:
+      context: ./nest
+      dockerfile: Dockerfile
+    container_name: susi_air_pilot_api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://susi_air:susiair_password@postgres:5432/susi_air_pilot?schema=public
+      SESSION_SECRET: susi-air-session-secret-key-change-in-production
+      SESSION_MAX_AGE: "86400000"
+      SEED_DATABASE: "true"
+      MAX_LOGIN_ATTEMPTS: "5"
+      LOGIN_LOCKOUT_DURATION: "900"
+      PORT: "3000"
+      NODE_ENV: production
+      CORS_ORIGIN: http://localhost:3000
+      TZ: Asia/Jakarta
+    ports:
+      - "3001:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - susi-network
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://localhost:3000/auth/session').then(r => process.exit(r.status === 401 ? 0 : 1)).catch(() => process.exit(1))\""]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  app:
+    build:
+      context: ./nuxt
+      dockerfile: Dockerfile
+    container_name: susi_air_pilot_app
+    restart: unless-stopped
+    environment:
+      NUXT_PUBLIC_API_BASE: http://localhost:3001
+      HOST: 0.0.0.0
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - susi-network
+
+networks:
+  susi-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
