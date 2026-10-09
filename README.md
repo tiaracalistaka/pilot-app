@@ -152,15 +152,16 @@ docker compose down -v
 
 The PostgreSQL and Prisma setup is ready for future database usage.
 
-On Docker API startup, the entrypoint automatically runs:
+When `DATABASE_URL` is configured, the Docker API entrypoint automatically runs:
 
 ```bash
 prisma db push
 npm run db:seed
 ```
 
-The seed is idempotent. If the initial user already exists, it skips the seed
-to avoid duplicate records.
+If `DATABASE_URL` is not configured, Prisma setup and seeding are skipped and
+the API runs with the JSON data source. The seed is idempotent: if the initial
+user already exists, it skips the seed to avoid duplicate records.
 
 To run the database setup manually:
 

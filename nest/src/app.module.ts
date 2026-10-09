@@ -17,7 +17,6 @@ import { SchedulesService } from './schedules/schedules.service';
 import { DataLoaderService } from './common/services/data-loader.service';
 import { SessionGuard } from './common/guards/session.guard';
 import { SecurityMiddleware } from './security/middleware';
-import { PrismaService } from './common/services/prisma.service';
 
 @Module({
   imports: [
@@ -45,7 +44,6 @@ import { PrismaService } from './common/services/prisma.service';
     DocumentsService,
     SchedulesService,
     DataLoaderService,
-    PrismaService,
     {
       provide: APP_GUARD,
       useClass: ThrottlerGuard,

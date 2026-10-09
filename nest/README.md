@@ -26,9 +26,10 @@ The Docker app is available at `http://localhost:3000` and the API at
 `http://localhost:3001`. The API connects to PostgreSQL at startup, but uses
 the JSON files in `nest/data` as its application data source.
 
-On API startup, Docker automatically runs `prisma db push` and the Prisma
-seed. The seed skips existing data, so restarting the container does not create
-duplicates.
+When `DATABASE_URL` is configured, the API container automatically runs
+`prisma db push` and the Prisma seed. If it is not configured, Prisma setup is
+skipped and the API uses JSON data. The seed skips existing data, so restarting
+the container does not create duplicates.
 
 Login credentials:
 

@@ -8,7 +8,6 @@ RUN npm ci
 
 COPY . .
 
-RUN npx prisma generate
 RUN npm run build
 
 FROM node:20-alpine AS production
@@ -30,9 +29,9 @@ COPY --from=builder /app/data ./data
 RUN chmod +x /app/docker-entrypoint.sh && chown -R nestjs:nodejs /app
 USER nestjs
 
-EXPOSE 3000
+EXPOSE 3001
 
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "fetch('http://localhost:3000/auth/session').then(r => process.exit(r.status === 401 ? 0 : 1)).catch(() => process.exit(1))"
+  CMD node -e "fetch('http://localhost:3001/auth/session').then(r => process.exit(r.status === 401 ? 0 : 1)).catch(() => process.exit(1))"
 
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
